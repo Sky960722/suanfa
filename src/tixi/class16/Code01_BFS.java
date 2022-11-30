@@ -2,10 +2,7 @@ package tixi.class16;
 
 import tixi.class16.Graph.Node;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 public class Code01_BFS {
 
@@ -14,16 +11,16 @@ public class Code01_BFS {
         if(start == null){
             return;
         }
-        Queue<Node> stack = new LinkedList<>();
+        Queue<Node> queue = new LinkedList<>();
         HashSet<Node> set = new HashSet<>();
-        stack.add(start);
+        queue.add(start);
         set.add(start);
-        while (!stack.isEmpty()){
-            Node cur = stack.poll();
+        while (!queue.isEmpty()){
+            Node cur = queue.poll();
             System.out.println(cur.value);
             for (Node next: cur.nexts) {
                 if(!set.contains(next)){
-                    stack.add(next);
+                    queue.add(next);
                     set.add(next);
                 }
             }

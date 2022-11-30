@@ -32,7 +32,6 @@ public class Code03_TopologySort {
                 zeroInQueue.add(node);
             }
         }
-
         while (!zeroInQueue.isEmpty()) {
             Node cur = zeroInQueue.poll();
             ans.add(cur);
